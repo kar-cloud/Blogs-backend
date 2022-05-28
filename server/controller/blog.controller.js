@@ -59,7 +59,7 @@ class BlogController {
 
     // Fill the updates object to be sent further.
     for (let i = 0; i < entries.length; i++) {
-      update[entries[i + 1]] = Object.values(req.body)[i + 1];
+      updates[entries[i]] = Object.values(req.body)[i];
     }
 
     // Fetch the blog Id from the user
