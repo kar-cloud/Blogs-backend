@@ -26,8 +26,10 @@ class BlogRepo {
 
   // Method to update a blog
   async updateBlog(updates, blogId) {
-    console.log({ updates }, blogId);
-    await this.blog.findOneAndUpdate({ _id: blogId }, { $set: updates });
+    await this.blog.findOneAndUpdate(
+      { _id: blogId },
+      { $set: updates, uDate: Date.now() }
+    );
     return await this.blog.findOne({ _id: blogId });
   }
 
