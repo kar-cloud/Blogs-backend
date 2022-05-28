@@ -14,7 +14,7 @@ class ReviewController {
 
     // return a message showing the user the success of creation of the review.
     res.status(200).json({
-      newBlogData: await this.blogService.createBlog(
+      newBlogData: await this.reviewService.createBlog(
         userId,
         blogId,
         description
@@ -24,23 +24,23 @@ class ReviewController {
   }
 
   /**
-   * Method to update the details of the blog.
+   * Method to update the review on a blog.
    * @param req
    * @param res
    */
-  async updateBlog(req, res) {
+  async updateReview(req, res) {
     const updates = {};
 
     // Fetch the details for the new description of the review.
-    const { userId, blogId, newDescription } = req.body;
+    const reviewId = req.params.reviewId;
+    const { newDescription } = req.body;
     updates[description] = newDescription;
 
     // return a positive response after updating of the blog.
     res.status(200).json({
-      updatedBlogData: await this.blogService.updateBlog(
+      updatedReviewData: await this.reviewService.updateReview(
         updates,
-        userId,
-        blogId
+        reviewId
       ),
       message: "Your review has been successfully updated.",
     });
