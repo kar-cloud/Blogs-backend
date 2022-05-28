@@ -22,7 +22,7 @@ class BlogController {
    */
   async getBlogById(req, res) {
     // Fetch the blogId from the user.
-    const blogId = req.query.id;
+    const blogId = req.params.blogId;
 
     // return the particular blog data as requested b the user.
     res.status(200).json({
@@ -63,7 +63,7 @@ class BlogController {
     }
 
     // Fetch the blog Id from the user
-    const blogId = req.body.id;
+    const blogId = req.params.blogId;
 
     // return a positive response after updating of the blog.
     res.status(200).json({
@@ -79,13 +79,11 @@ class BlogController {
    */
   async deleteBlog(req, res) {
     // Fetch the blog to be deleted from the user.
-    const param = req.query.id;
+    const blogId = req.params.blogId;
 
     // return a message showing the user the success of deletion of the blog.
     res.status(200).json({
-      deletedBlogData: await this.blogService.deleteBlog({
-        _id: param,
-      }),
+      deletedBlogData: await this.blogService.deleteBlog(blogId),
       message: "Your blog has been deleted.",
     });
   }
