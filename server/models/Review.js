@@ -21,6 +21,12 @@ const ReviewSchema = new mongoose.Schema({
   uDate: {
     type: Date,
   },
+
+  // P.S.: This was not mentioned in the task list.
+  // blog id on which review is made.
+  blogId: {
+    type: mongoose.ObjectId,
+  },
 });
 
 module.exports = mongoose.model("review", ReviewSchema);
