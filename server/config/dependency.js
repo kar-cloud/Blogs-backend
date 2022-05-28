@@ -4,9 +4,15 @@ const BlogRepo = require("../repository/blog.repo");
 const ReviewService = require("../service/review.service");
 const ReviewRepo = require("../repository/review.repo");
 
+const blogRepo = new BlogRepo();
+const blogService = new BlogService(blogRepo);
+
+const reviewRepo = new ReviewRepo();
+const reviewService = new ReviewService(reviewRepo);
+
 module.exports = {
-  BlogService,
-  BlogRepo,
-  ReviewService,
-  ReviewRepo,
+  blogService,
+  blogRepo,
+  reviewService,
+  reviewRepo,
 };

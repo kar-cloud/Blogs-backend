@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const BlogController = require("../../controller/blog.controller");
-// const {blogService} = require("")
-let blogService;
+const { blogService } = require("../../config/dependency");
 const blogController = new BlogController(blogService);
 
 // @route GET /api/getBlogs

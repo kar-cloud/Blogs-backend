@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const ReviewController = require("../../controller/review.controller");
-let reviewService;
+const { reviewService } = require("../../config/dependency");
 const reviewController = new ReviewController(reviewService);
 
 // @route POST /api/createReview/:blogId
