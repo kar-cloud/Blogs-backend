@@ -5,16 +5,16 @@ const ReviewController = require("../../controller/review.controller");
 const { reviewService } = require("../../config/dependency");
 const reviewController = new ReviewController(reviewService);
 
-// @route POST /api/createReview/:blogId
+// @route POST /api/createReview/:reviewId
 // @desc to create a review on the blog
-router.post("/createReview/:blogId", (req, res) => {
+router.post("/createReview/", (req, res) => {
   reviewController.createReview(req, res);
 });
 
-// @route PUT /api/updateReview/:reviewId
-// @desc to update a review on the blog
-router.put("/updateReview/:reviewId", (req, res) => {
-  reviewController.updateReview(req, res);
+// @route PUT /api/deleteReview/:reviewId
+// @desc to delete a review on the blog
+router.delete("/deleteReview/:reviewId", (req, res) => {
+  reviewController.deleteReview(req, res);
 });
 
 module.exports = router;

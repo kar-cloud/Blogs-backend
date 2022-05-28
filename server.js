@@ -8,7 +8,7 @@ const reviewRouter = require("./server/routes/api/review.route");
 const app = express();
 const PORT = 8080;
 
-// Connect MongoDb Instance.
+// Connect MongoDB Instance.
 connectDB();
 
 app.use(express.json());

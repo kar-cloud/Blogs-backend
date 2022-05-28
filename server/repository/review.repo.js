@@ -15,12 +15,9 @@ class ReviewRepo {
     return await this.review.create(newReview);
   }
 
-  // Method to update a review on a blog
-  async updateReview(updates, reviewId) {
-    return await this.review.findOneAndUpdate(
-      { _id: reviewId },
-      { $set: updates }
-    );
+  // Method to delete a review on a blog
+  async deleteReview(reviewId) {
+    return await this.review.deleteOne({ _id: reviewId });
   }
 }
 

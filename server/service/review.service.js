@@ -15,11 +15,10 @@ class ReviewService {
 
   /**
    * Service function to update a review on a blog.
-   * @param updates
    * @param reviewId
    */
-  async updateReview(updates, reviewId) {
-    return await this.reviewRepo.updateReview(updates, reviewId);
+  async deleteReview(reviewId) {
+    return await this.reviewRepo.deleteReview(reviewId);
   }
 }
 
