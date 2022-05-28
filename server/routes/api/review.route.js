@@ -1,4 +1,4 @@
-const express = express();
+const express = require("express");
 const router = express.Router();
 
 const ReviewController = require("../../controller/review.controller");
@@ -16,3 +16,5 @@ router.post("/createReview/:blogId", (req, res) => {
 router.put("/updateReview/:reviewId", (req, res) => {
   reviewController.updateReview(req, res);
 });
+
+module.exports = router;

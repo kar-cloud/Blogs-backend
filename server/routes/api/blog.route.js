@@ -35,3 +35,5 @@ router.put("/updateBlog/:blogId", (req, res) => {
 router.delete("/deleteBlog/:blogId", (req, res) => {
   blogController.deleteBlog(req, res);
 });
+
+module.exports = router;
