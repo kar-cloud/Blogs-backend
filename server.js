@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 
 const connectDB = require("./server/config/db");
@@ -6,6 +5,8 @@ const blogRouter = require("./server/routes/api/blog.route");
 const reviewRouter = require("./server/routes/api/review.route");
 
 const app = express();
+
+// Initializing a local port.
 const PORT = 8080;
 
 // Connect MongoDB Instance.
