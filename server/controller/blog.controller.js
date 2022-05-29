@@ -83,7 +83,7 @@ class BlogController {
 
     // return a message showing the user the success of deletion of the blog.
     res.status(200).json({
-      deletedBlogData: await this.blogService.deleteBlog(blogId),
+      deletedBlog: await this.blogService.deleteBlog(blogId),
       message: "Your blog has been deleted.",
     });
   }
